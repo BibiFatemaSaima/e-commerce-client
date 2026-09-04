@@ -6,7 +6,7 @@ const ManageProducts = () => {
   const [loading, setLoading] = useState(true);
 
   const loadProducts = () => {
-    fetch("http://localhost:3000/products")
+    fetch("https://e-commerce-server-roan-mu.vercel.app/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -31,7 +31,7 @@ const ManageProducts = () => {
       return;
     }
 
-    fetch(`http://localhost:3000/products/${id}`, {
+    fetch(`https://e-commerce-server-roan-mu.vercel.app/products/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

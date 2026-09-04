@@ -12,7 +12,7 @@ const Product = () => {
   const productsPerPage = 8;
 
   useEffect(() => {
-    fetch("http://localhost:3000/products")
+    fetch("https://e-commerce-server-roan-mu.vercel.app/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

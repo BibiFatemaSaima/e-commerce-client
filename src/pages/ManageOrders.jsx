@@ -5,7 +5,7 @@ const ManageOrders = () => {
   const [loading, setLoading] = useState(true);
 
   const loadOrders = () => {
-    fetch("http://localhost:3000/admin/orders")
+    fetch("https://e-commerce-server-roan-mu.vercel.app/admin/orders")
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
@@ -22,7 +22,7 @@ const ManageOrders = () => {
   }, []);
 
   const handleStatusChange = (orderId, newStatus) => {
-    fetch(`http://localhost:3000/orders/${orderId}`, {
+    fetch(`https://e-commerce-server-roan-mu.vercel.app/orders/${orderId}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

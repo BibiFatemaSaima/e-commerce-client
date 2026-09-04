@@ -25,7 +25,7 @@ const Register = () => {
           role: "customer",
         };
 
-        fetch("http://localhost:3000/users", {
+        fetch("https://e-commerce-server-roan-mu.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

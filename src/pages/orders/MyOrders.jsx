@@ -13,7 +13,7 @@ const MyOrders = () => {
       return;
     }
 
-    fetch(`http://localhost:3000/orders?email=${user.email}`)
+    fetch(`https://e-commerce-server-roan-mu.vercel.app/orders?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);

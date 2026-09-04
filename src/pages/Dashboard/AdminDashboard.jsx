@@ -7,21 +7,21 @@ const AdminDashboard = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/products")
+    fetch("https://e-commerce-server-roan-mu.vercel.app/products")
       .then((res) => res.json())
       .then((data) => setProducts(data))
       .catch((error) => console.error("Error loading products:", error));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3000/admin/orders")
+    fetch("https://e-commerce-server-roan-mu.vercel.app/admin/orders")
       .then((res) => res.json())
       .then((data) => setOrders(data))
       .catch((error) => console.error("Error loading orders:", error));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3000/all-users")
+    fetch("https://e-commerce-server-roan-mu.vercel.app/all-users")
       .then((res) => res.json())
       .then((data) => setUsers(data))
       .catch((error) => console.error("Error loading users:", error));

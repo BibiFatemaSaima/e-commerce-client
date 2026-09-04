@@ -20,7 +20,7 @@ const ProductDetails = () => {
 
   // Load product
   useEffect(() => {
-    fetch(`http://localhost:3000/products/${id}`)
+    fetch(`https://e-commerce-server-roan-mu.vercel.app/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -33,7 +33,7 @@ const ProductDetails = () => {
 
   // Load reviews
   useEffect(() => {
-    fetch(`http://localhost:3000/reviews/${id}`)
+    fetch(`https://e-commerce-server-roan-mu.vercel.app/reviews/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
@@ -67,7 +67,7 @@ const ProductDetails = () => {
     setReviewLoading(true);
 
     try {
-      const response = await fetch("http://localhost:3000/reviews", {
+      const response = await fetch("https://e-commerce-server-roan-mu.vercel.app/reviews", {
         method: "POST",
         headers: {
           "content-type": "application/json",

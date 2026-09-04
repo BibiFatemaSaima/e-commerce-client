@@ -11,7 +11,9 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/users?email=${user.email}`)
+      fetch(
+        `https://e-commerce-server-roan-mu.vercel.app/users?email=${user.email}`,
+      )
         .then((res) => res.json())
         .then((data) => {
           setUserInfo(data);
@@ -24,7 +26,9 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/orders?email=${user.email}`)
+      fetch(
+        `https://e-commerce-server-roan-mu.vercel.app/orders?email=${user.email}`,
+      )
         .then((res) => res.json())
         .then((data) => {
           setOrders(data);
@@ -45,7 +49,6 @@ const Dashboard = () => {
     <div className="min-h-[70vh] bg-base-200 p-6">
       {" "}
       <div className="max-w-5xl mx-auto">
-        ```
         <div className="bg-base-100 rounded-xl shadow p-6 mb-6">
           <h1 className="text-3xl font-bold">Welcome to Dashboard 👋</h1>
 

@@ -10,7 +10,7 @@ const EditProduct = () => {
   const [updating, setUpdating] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/products/${id}`)
+    fetch(`https://e-commerce-server-roan-mu.vercel.app/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -39,7 +39,7 @@ const EditProduct = () => {
     };
 
     try {
-      const response = await fetch(`http://localhost:3000/products/${id}`, {
+      const response = await fetch(`https://e-commerce-server-roan-mu.vercel.app/products/${id}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",

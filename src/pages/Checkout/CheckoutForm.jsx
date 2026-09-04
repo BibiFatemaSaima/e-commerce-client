@@ -16,7 +16,7 @@ const CheckoutForm = ({ totalPrice }) => {
 
   useEffect(() => {
     if (totalPrice > 0) {
-      fetch("http://localhost:3000/create-payment-intent", {
+      fetch("https://e-commerce-server-roan-mu.vercel.app/create-payment-intent", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -84,7 +84,7 @@ const CheckoutForm = ({ totalPrice }) => {
         createdAt: new Date(),
       };
 
-      fetch("http://localhost:3000/orders", {
+      fetch("https://e-commerce-server-roan-mu.vercel.app/orders", {
         method: "POST",
         headers: {
           "content-type": "application/json",
