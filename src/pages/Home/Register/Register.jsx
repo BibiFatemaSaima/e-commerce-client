@@ -10,6 +10,7 @@ const Register = () => {
   const handleRegister = (e) => {
     e.preventDefault();
 
+    const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
 
@@ -21,6 +22,7 @@ const Register = () => {
 
         // Save user in MongoDB
         const userInfo = {
+          name: name,
           email: result.user.email,
           role: "customer",
         };
@@ -53,7 +55,21 @@ const Register = () => {
           </h2>
 
           <form onSubmit={handleRegister}>
+            {/* Name */}
             <label className="label">
+              <span className="label-text">Name</span>
+            </label>
+
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter your name"
+              className="input input-bordered w-full"
+              required
+            />
+
+            {/* Email */}
+            <label className="label mt-3">
               <span className="label-text">Email</span>
             </label>
 
@@ -65,6 +81,7 @@ const Register = () => {
               required
             />
 
+            {/* Password */}
             <label className="label mt-3">
               <span className="label-text">Password</span>
             </label>
@@ -77,24 +94,16 @@ const Register = () => {
               required
             />
 
-            {error && (
-              <p className="text-red-500 text-sm mt-3">{error}</p>
-            )}
+            {error && <p className="text-red-500 text-sm mt-3">{error}</p>}
 
-            <button
-              type="submit"
-              className="btn btn-primary w-full mt-6"
-            >
+            <button type="submit" className="btn btn-primary w-full mt-6">
               Register
             </button>
           </form>
 
           <p className="text-center mt-4">
             Already have an account?{" "}
-            <Link
-              to="/login"
-              className="text-primary font-semibold"
-            >
+            <Link to="/login" className="text-primary font-semibold">
               Login
             </Link>
           </p>
